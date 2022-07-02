@@ -1,4 +1,5 @@
 import {initializeApp} from 'firebase/app'
+import {collection, getFirestore} from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyBynpO6M7k4MtVe7qJi0IYnB8-UQW-uxqM",
@@ -10,3 +11,8 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore()
+
+const todoCollection = collection(db, "todos");
+
+export {app,db, todoCollection};
